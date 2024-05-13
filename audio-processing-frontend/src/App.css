@@ -1,50 +1,70 @@
-body {
-  background-color: #121212;
-  color: #fff;
+body, html {
+  margin: 0;
+  padding: 0;
   font-family: 'Arial', sans-serif;
+  background: #121212;  /* Dark background for the whole page */
+  color: #ddd;          /* Lighter text for better readability in dark mode */
 }
 
-.App {
-  width: 90%;
-  max-width: 600px;
-  margin: 20px auto;
+header {
+  background: #1a237e;  /* Darker blue for the header */
+  color: #fff;          /* White text for the header */
+  padding: 10px 20px;
   text-align: center;
 }
 
-input[type="file"] {
-  margin-top: 20px;
+main {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-button {
-  padding: 10px 20px;
-  margin-top: 10px;
-  background-color: #6200EE;
+.upload-section {
+  margin-bottom: 20px;
+}
+
+input, .btn {
+  padding: 10px;
+  margin: 5px;
   border: none;
-  color: white;
+  border-radius: 5px;
+}
+
+input[type="file"] {
+  padding: 10px;
+  border: 1px solid #333;  /* Darker borders for inputs */
+  background: #333;        /* Dark background for file input */
+  color: #fff;             /* White text color */
+}
+
+.btn {
+  background-color: #0d47a1;  /* Darker blue for buttons */
+  color: #fff;                /* White text for buttons */
   cursor: pointer;
-  transition: background-color 0.3s;
 }
 
-button:hover {
-  background-color: #3700B3;
+.btn:hover {
+  background-color: #0a369d;  /* Even darker blue on hover */
 }
 
-.error {
-  color: #FF1744;
-  margin-top: 10px;
+.output {
+  background: #333;       /* Dark background for output sections */
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);  /* Lighter box-shadow */
+  width: 80%;
+  max-width: 600px;
 }
 
 .transcription, .result {
   margin-top: 20px;
-  background-color: #333;
-  padding: 15px;
-  text-align: left;
 }
 
-.buttons {
+.loading, .error {
+  color: #ff4081;  /* Bright color for loading/error messages */
+}
+
+.controls {
   margin-top: 20px;
-}
-
-.result h3 {
-  margin-top: 0;
 }
