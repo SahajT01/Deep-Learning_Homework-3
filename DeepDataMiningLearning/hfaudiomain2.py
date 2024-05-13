@@ -5,7 +5,7 @@ import torch
 from torch.utils.data import DataLoader
 import os
 from transformers import Trainer, Seq2SeqTrainer, TrainingArguments, Seq2SeqTrainingArguments, get_scheduler
-from accelerate import Accelerator
+#from accelerate import Accelerator
 from tqdm.auto import tqdm
 import datetime
 

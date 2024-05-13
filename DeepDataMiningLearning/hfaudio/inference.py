@@ -75,11 +75,11 @@ def preprocess_audio(datasample, samplerate=16_000, orig_sr=44100, maxseconds=10
 
 #"audio-asr" "audio-classification"
 class MyAudioInference():
-    def __init__(self, model_name, task="audio-asr", target_language='eng', cache_dir="./output", gpuid='0', combineoutput=False, generative=False) -> None:
+    def __init__(self, model_name, task="audio-asr", target_language='eng', cache_dir="./output", combineoutput=False, generative=False) -> None:
         self.target_language = target_language #"cmn"
         self.cache_dir = cache_dir
-        #self.device = "cuda:0" if torch.cuda.is_available() else "cpu"
-        self.device, useamp = get_device(gpuid=gpuid, useamp=False)
+        self.device = "cuda:0" if torch.cuda.is_available() else "cpu"
+        #self.device, useamp = get_device(gpuid=gpuid, useamp=False)
         self.task = task
         self.model_name = model_name
         if isinstance(model_name, str) and "wav2vec2" in model_name.lower():
@@ -469,7 +469,7 @@ if __name__ == "__main__":
     
 
     USE_HPC = False
-    USE_Windows = True
+    USE_Windows = False
     # if USE_HPC:
     #     mycache_dir = deviceenv_set(True, data_path='/data/cmpe249-fa23/Huggingfacecache')
     # elif USE_Windows:
@@ -478,7 +478,7 @@ if __name__ == "__main__":
     # else:
     #     mycache_dir = "/DATA10T/Cache"
     
-    mycache_dir= r"D:\Cache\huggingface"
+    mycache_dir= "/DATA10T/Cache"
     os.environ['HF_HOME'] = mycache_dir
     print("mycache_dir:", mycache_dir)
     model_name = "facebook/seamless-m4t-v2-large"
